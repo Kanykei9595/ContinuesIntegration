@@ -11,7 +11,7 @@ on:
      steps:
      # 1. checkout code
      - name: Checkout Code
-       uses: actions/chekout@v4
+       uses: actions/checkout@v4
      # 2. Setup Node.js environment
      - name: Setup Node.js
        uses: actions/setup-node@v4
