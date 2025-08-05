@@ -51,7 +51,7 @@ on:
   # Push image to ECR
     - name: Push Docker Image
        run: |
-        docker push ${{ steps.login-ecr.outputs.registry }}/myapp;latest
+        docker push ${{ step.login-ecr.outputs.registry }}/myapp;latest
 
   # DEPLOY to EC2
   deploy:
