@@ -46,12 +46,12 @@ on:
       run: |
          IMAGE_TAG_Latest
          docker build -t myapp:$IMAGE_TAG
-         docker tag myapp:$IMAGE_TAG ${{ step.login-ecr.outputs.registry }}/myapp:$IMAGE_TAG
+         docker tag myapp:$IMAGE_TAG ${{ steps.login-ecr.outputs.registry }}/myapp:$IMAGE_TAG
   
   # Push image to ECR
     - name: Push Docker Image
        run: |
-        docker push ${{ step.login-ecr.outputs.registry }}/myapp;latest
+        docker push ${{ steps.login-ecr.outputs.registry }}/myapp;latest
 
   # DEPLOY to EC2
   deploy:
